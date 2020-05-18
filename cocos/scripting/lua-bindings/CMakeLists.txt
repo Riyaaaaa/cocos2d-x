@@ -141,16 +141,7 @@ if(APPLE)
             )
     endif()
 elseif(ANDROID)
-    set(lua_bindings_manual_headers
-        ${lua_bindings_manual_headers}
-        auto/lua_cocos2dx_experimental_webview_auto.hpp
-        manual/ui/lua_cocos2dx_experimental_webview_manual.hpp
-        )
-    set(lua_bindings_manual_files
-        ${lua_bindings_manual_files}
-        auto/lua_cocos2dx_experimental_webview_auto.cpp
-        manual/ui/lua_cocos2dx_experimental_webview_manual.cpp
-        )
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/proj.android ${ENGINE_BINARY_PATH}/cocos/lua-bindings/proj.android)
 endif()
 
 set(lua_bindings_files
